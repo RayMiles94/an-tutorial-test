@@ -1,5 +1,5 @@
 # this project create by raouf 
-
+# this is tutorial projet for lear angular 
 
 # Shopping List
 
