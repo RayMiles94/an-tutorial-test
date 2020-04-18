@@ -30,6 +30,7 @@ modules/.vscode
 # Ignore npm/yarn debug log
 npm-debug.log
 yarn-error.log
+yarn.lock
 
 # build-analytics
 .build-analytics
