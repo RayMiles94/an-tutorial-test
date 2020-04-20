@@ -9,6 +9,8 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 
 import { RecipeResolverService } from './recipes/recipe-resolver.service'; 
 
+
+
 const appRoutes: Routes = [
   { path: '', redirectTo: '/recipes' , pathMatch: 'full'},
   { path: 'recipes', component: RecipesComponent, children: [
