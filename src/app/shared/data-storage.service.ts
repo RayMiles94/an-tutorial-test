@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http'
 
 // custom services for recipes
 import { RecipeService } from '../recipes/recipe.service';
+import { Recipe } from '../recipes/recipe.model';
 
 @Injectable({
     providedIn: 'root'
@@ -19,5 +20,14 @@ export class DataStrorageService {
         .subscribe(data => {
             console.log(data)
         });
+    }
+
+    fetchRecipes() {
+        this.http.get<Recipe[]>('https://ng-courset-tutorial.firebaseio.com/recipes.json')
+        .subscribe(
+            recipes => {
+                this.recipeService.setRecipes(recipes);
+            }
+        );
     }
 }
