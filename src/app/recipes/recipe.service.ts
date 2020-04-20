@@ -14,24 +14,25 @@ import { Subject } from 'rxjs';
 export class RecipeService {
     recipeChange = new Subject<Recipe[]>();
 
-    private recipes: Recipe[] = [
-        new Recipe('A test Recipe',
-        'this is simply a test',
-        'https://images-gmi-pmc.edge-generalmills.com/7eb09e32-fb06-4a34-97e6-def91b62164f.jpg',
-        [
-          new Ingredients('Meat', 1),
-          new Ingredients('French Fries', 20)
-        ]
-      ),
-        new Recipe('A test Recipe 1',
-        'this is simply a test 1',
-        'https://images-gmi-pmc.edge-generalmills.com/c5dc7b6e-0d5a-4481-a97f-410c3c2e384f.jpg',
-        [
-          new Ingredients('Buns', 2),
-          new Ingredients('Meat', 1)
-        ]
-      ),
-    ];
+    // private recipes: Recipe[] = [
+    //     new Recipe('A test Recipe',
+    //     'this is simply a test',
+    //     'https://images-gmi-pmc.edge-generalmills.com/7eb09e32-fb06-4a34-97e6-def91b62164f.jpg',
+    //     [
+    //       new Ingredients('Meat', 1),
+    //       new Ingredients('French Fries', 20)
+    //     ]
+    //   ),
+    //     new Recipe('A test Recipe 1',
+    //     'this is simply a test 1',
+    //     'https://images-gmi-pmc.edge-generalmills.com/c5dc7b6e-0d5a-4481-a97f-410c3c2e384f.jpg',
+    //     [
+    //       new Ingredients('Buns', 2),
+    //       new Ingredients('Meat', 1)
+    //     ]
+    //   ),
+    // ];
+    private recipes: Recipe[] = [];
 
     constructor(private slService: ShoppingListService) {}
 
