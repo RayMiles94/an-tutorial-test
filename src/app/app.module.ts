@@ -29,6 +29,7 @@ import { DropDownDirective } from './shared/dropdown.directive';
 // custom service for shopping list
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { RecipeService } from './recipes/recipe.service';
     ShoppingEditComponent,
     DropDownDirective,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
