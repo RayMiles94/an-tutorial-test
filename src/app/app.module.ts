@@ -31,6 +31,9 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
 import { AuthComponent } from './auth/auth.component';
 
+// load spinner componet 
+import  { LoadingSpinngComponet } from './shared/loading-spinner/loading-spining.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +47,8 @@ import { AuthComponent } from './auth/auth.component';
     DropDownDirective,
     RecipeStartComponent,
     RecipeEditComponent,
-    AuthComponent
+    AuthComponent,
+    LoadingSpinngComponet
   ],
   imports: [
     BrowserModule,
