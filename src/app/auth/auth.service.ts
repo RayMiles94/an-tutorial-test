@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError, Subject, BehaviorSubject } from 'rxjs';
 import { UserModel } from './user.model';
+import { Router } from '@angular/router';
 
 export interface AuthresponseData {
     idToken: string,
@@ -21,7 +22,7 @@ export class AuthService {
     user = new BehaviorSubject<UserModel>(null);
     token: string = null;
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private router: Router) { }
 
     private handleAuthentication(email: string, userID: string, token: string, expdate: number) {
         const expDate = new Date(new Date().getTime() + expdate * 1000);
@@ -63,6 +64,10 @@ export class AuthService {
                 ));
     }
 
+    logout() {
+        this.user.next(null);
+        this.router.navigate(['/auth']);
+    }
 
     private handleError(errorRES: HttpErrorResponse) {
         let errorMessage = 'An unkown error random!';
