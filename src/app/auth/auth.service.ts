@@ -28,6 +28,7 @@ export class AuthService {
         const expDate = new Date(new Date().getTime() + expdate * 1000);
         const user = new UserModel(email, userID, token, expDate);
         this.user.next(user);
+        localStorage.setItem('userData',JSON.stringify(user));
     }
 
     signup(email: string, password: string) {
@@ -48,6 +49,22 @@ export class AuthService {
     }
 
 
+    autoLogin() {
+        const userData: {
+            email:string,
+            id: string,
+            _token: string,
+            _tokenExpirationDate: Date
+        } = JSON.parse( localStorage.getItem('userData') );
+        if(!userData) {
+            return;
+        }
+
+        const loadeduser = new UserModel(userData.email, userData.id, userData._token, new Date(userData._tokenExpirationDate));
+        if ( loadeduser.Token ) {
+            this.user.next(loadeduser);
+        }
+    }
 
     login(login: string, password: string) {
         return this.http.post<AuthresponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key= AIzaSyDmS1QIGQIVo2TkwZTyO9FWQuSbLmGbbDw',
