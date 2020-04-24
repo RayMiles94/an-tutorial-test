@@ -3,7 +3,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 // import HTTP CLIENT 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +33,7 @@ import { AuthComponent } from './auth/auth.component';
 
 // load spinner componet 
 import  { LoadingSpinngComponet } from './shared/loading-spinner/loading-spining.component';
+import { AuthInterceptorService } from './auth/auth-intercepot.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import  { LoadingSpinngComponet } from './shared/loading-spinner/loading-spining
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [ShoppingListService, RecipeService],
+  providers: [ShoppingListService, RecipeService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
