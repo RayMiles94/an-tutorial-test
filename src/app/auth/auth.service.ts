@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+import { throwError, Subject } from 'rxjs';
+import { UserModel } from './user.model';
 
 export interface AuthresponseData {
     idToken: string,
@@ -16,8 +17,15 @@ export interface AuthresponseData {
     providedIn: 'root'
 })
 export class AuthService {
+    user = new Subject<UserModel>();
 
     constructor(private http: HttpClient) { }
+
+    private handleAuthentication(email: string, userID: string, token: string, expdate: number) {
+        const expDate = new Date(new Date().getTime() + expdate * 1000);
+        const user = new UserModel(email, userID, token, expDate);
+        this.user.next(user);
+    }
 
     signup(email: string, password: string) {
         return this.http.post<AuthresponseData>(
@@ -26,8 +34,17 @@ export class AuthService {
                 email: email,
                 password: password,
                 returnSecureToken: true
-            }).pipe(catchError(this.handleError));
+            }).pipe(catchError(this.handleError),
+                tap(
+                    resData => {
+                        this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn);
+                    }
+
+                )
+            );
     }
+
+
 
     login(login: string, password: string) {
         return this.http.post<AuthresponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key= AIzaSyDmS1QIGQIVo2TkwZTyO9FWQuSbLmGbbDw',
@@ -35,7 +52,13 @@ export class AuthService {
                 email: login,
                 password: password,
                 returnSecureToken: true
-            }).pipe(catchError(this.handleError));
+            }).pipe(catchError(this.handleError),
+                tap(
+                    resData => {
+                        this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn);
+                    }
+
+                ));
     }
 
 
