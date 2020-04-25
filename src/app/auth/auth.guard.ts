@@ -29,7 +29,8 @@ export class AuthGuard implements CanActivate {
                  // ref:#45
                  return this.router.createUrlTree(['/auth']);
              }
-            )/*
+            )
+            /*
              its work fine but  i have better solution using url TREE ref:#45
             ,
             tap(
@@ -38,7 +39,8 @@ export class AuthGuard implements CanActivate {
                         this.router.navigate(['/auth']);
                     }
                 }
-            ) */
+            )
+            */
         );
     }
 
