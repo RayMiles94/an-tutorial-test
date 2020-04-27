@@ -1,4 +1,4 @@
-import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, ComponentFactoryResolver, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
@@ -7,6 +7,7 @@ import { AuthService, AuthresponseData } from './auth.service';
 import { Observable } from 'rxjs';
 
 import { AlertComponent } from '../shared/alert/alert.component';
+import { PlacerHolderDirective } from '../shared/placerholder/placeholder.directive';
 
 @Component({
   selector: 'app-auth',
@@ -17,6 +18,9 @@ export class AuthComponent implements OnInit {
   isLoginMode = true;
   isLoading = false;
   error: string = null;
+
+  @ViewChild(PlacerHolderDirective)
+  alertHost: PlacerHolderDirective;
 
   constructor(private authService: AuthService,
               private router: Router,
@@ -70,6 +74,9 @@ export class AuthComponent implements OnInit {
 
   private showErrorAlert(errorMessage: string) {
     const alertComfactory = this.componentFactoryResolver.resolveComponentFactory(AlertComponent);
+    const hostviewContainerRef = this.alertHost.viewContainerRef;
+    hostviewContainerRef.clear();
+    hostviewContainerRef.createComponent(alertComfactory);
   }
 
 }
