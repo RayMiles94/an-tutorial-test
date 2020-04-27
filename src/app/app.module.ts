@@ -25,6 +25,7 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 
 // custom directive
 import { DropDownDirective } from './shared/dropdown.directive';
+import { PlacerHolderDirective } from './shared/placerholder/placeholder.directive';
 
 // custom service for shopping list
 import { ShoppingListService } from './shopping-list/shopping-list.service';
@@ -35,6 +36,7 @@ import { AuthComponent } from './auth/auth.component';
 import  { LoadingSpinngComponet } from './shared/loading-spinner/loading-spining.component';
 import { AuthInterceptorService } from './auth/auth-intercepot.service';
 import { AlertComponent } from './shared/alert/alert.component';
+
 
 @NgModule({
   declarations: [
@@ -51,7 +53,8 @@ import { AlertComponent } from './shared/alert/alert.component';
     RecipeEditComponent,
     AuthComponent,
     LoadingSpinngComponet,
-    AlertComponent
+    AlertComponent,
+    PlacerHolderDirective
   ],
   imports: [
     BrowserModule,
