@@ -64,6 +64,7 @@ import { AlertComponent } from './shared/alert/alert.component';
     HttpClientModule,
   ],
   providers: [ShoppingListService, RecipeService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true  }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AlertComponent]
 })
 export class AppModule { }
