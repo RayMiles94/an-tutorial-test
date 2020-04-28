@@ -12,8 +12,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 
 // Shopping Components
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+// import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+// import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 
 // custom directive
 import { DropDownDirective } from './shared/dropdown.directive';
@@ -40,13 +40,14 @@ import { AlertComponent } from './shared/alert/alert.component';
 // custom recipes module
 import { RecipesModule  } from './recipes/recipes.module';
 
+// custom servies module
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
     DropDownDirective,
     AuthComponent,
     LoadingSpinngComponet,
@@ -59,7 +60,8 @@ import { RecipesModule  } from './recipes/recipes.module';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    RecipesModule
+    RecipesModule,
+    ShoppingListModule
   ],
   providers: [
     ShoppingListService,
