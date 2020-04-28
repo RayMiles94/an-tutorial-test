@@ -16,8 +16,8 @@ import { HeaderComponent } from './header/header.component';
 // import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 
 // custom directive
-import { DropDownDirective } from './shared/dropdown.directive';
-import { PlacerHolderDirective } from './shared/placerholder/placeholder.directive';
+// import { DropDownDirective } from './shared/dropdown.directive';
+// import { PlacerHolderDirective } from './shared/placerholder/placeholder.directive';
 
 // custom service for shopping list
 import { ShoppingListService } from './shopping-list/shopping-list.service';
@@ -25,7 +25,7 @@ import { RecipeService } from './recipes/recipe.service';
 import { AuthComponent } from './auth/auth.component';
 
 // load spinner componet 
-import  { LoadingSpinngComponet } from './shared/loading-spinner/loading-spining.component';
+// import  { LoadingSpinngComponet } from './shared/loading-spinner/loading-spining.component';
 import { AuthInterceptorService } from './auth/auth-intercepot.service';
 import { AlertComponent } from './shared/alert/alert.component';
 
@@ -42,17 +42,14 @@ import { RecipesModule  } from './recipes/recipes.module';
 
 // custom servies module
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    DropDownDirective,
-    AuthComponent,
-    LoadingSpinngComponet,
-    AlertComponent,
-    PlacerHolderDirective
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +58,8 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
     HttpClientModule,
     AppRoutingModule,
     RecipesModule,
-    ShoppingListModule
+    ShoppingListModule,
+    SharedModule
   ],
   providers: [
     ShoppingListService,
@@ -73,6 +71,6 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
     }
   ],
   bootstrap: [AppComponent],
-  entryComponents: [AlertComponent]
+  
 })
 export class AppModule { }
