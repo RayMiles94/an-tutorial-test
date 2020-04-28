@@ -43,12 +43,6 @@ import { RecipesModule  } from './recipes/recipes.module';
 
 @NgModule({
   declarations: [
-    // RecipesComponent,
-    // RecipeListComponent,
-    // RecipeDetailComponent,
-    // RecipeItemComponent,
-    // RecipeStartComponent,
-    // RecipeEditComponent,
     AppComponent,
     HeaderComponent,
     ShoppingListComponent,
