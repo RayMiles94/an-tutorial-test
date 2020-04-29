@@ -41,14 +41,14 @@ import { HeaderComponent } from './header/header.component';
 // import { RecipesModule  } from './recipes/recipes.module';
 
 // custom servies module
-import { ShoppingListModule } from './shopping-list/shopping-list.module';
+// import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
 
 // import coremodule for services
 import { CoreModule } from './core.module';
 
 // import Auth Module
-import { AuthModule } from './auth/auth.module';
+// import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
@@ -62,8 +62,8 @@ import { AuthModule } from './auth/auth.module';
     HttpClientModule,
     AppRoutingModule,
     // RecipesModule,
-    ShoppingListModule,
-    AuthModule,
+    // ShoppingListModule,
+    // AuthModule,
     SharedModule,
     CoreModule
   ],
