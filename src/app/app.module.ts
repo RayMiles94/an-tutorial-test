@@ -3,7 +3,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 // import HTTP CLIENT 
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,14 +20,14 @@ import { HeaderComponent } from './header/header.component';
 // import { PlacerHolderDirective } from './shared/placerholder/placeholder.directive';
 
 // custom service for shopping list
-import { ShoppingListService } from './shopping-list/shopping-list.service';
-import { RecipeService } from './recipes/recipe.service';
+// import { ShoppingListService } from './shopping-list/shopping-list.service';
+// import { RecipeService } from './recipes/recipe.service';
 import { AuthComponent } from './auth/auth.component';
 
 // load spinner componet 
 // import  { LoadingSpinngComponet } from './shared/loading-spinner/loading-spining.component';
-import { AuthInterceptorService } from './auth/auth-intercepot.service';
-import { AlertComponent } from './shared/alert/alert.component';
+// import { AuthInterceptorService } from './auth/auth-intercepot.service';
+// import { AlertComponent } from './shared/alert/alert.component';
 
 // custom modules for recipes
 // import { RecipesComponent } from './recipes/recipes.component';
@@ -44,6 +44,9 @@ import { RecipesModule  } from './recipes/recipes.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
 
+// import coremodule for services
+import { CoreModule } from './core.module';
+
 
 @NgModule({
   declarations: [
@@ -59,17 +62,18 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     RecipesModule,
     ShoppingListModule,
-    SharedModule
+    SharedModule,
+    CoreModule
   ],
-  providers: [
-    ShoppingListService,
-    RecipeService, 
-    { 
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptorService,
-      multi: true 
-    }
-  ],
+  // providers: [
+  //   ShoppingListService,
+  //   RecipeService, 
+  //   { 
+  //     provide: HTTP_INTERCEPTORS,
+  //     useClass: AuthInterceptorService,
+  //     multi: true 
+  //   }
+  // ],
   bootstrap: [AppComponent],
   
 })
