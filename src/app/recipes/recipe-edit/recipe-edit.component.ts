@@ -18,7 +18,11 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
 
   constructor(private route: ActivatedRoute,
               private recipeService: RecipeService,
-              private router: Router) { }
+              private router: Router) {}
+
+  get ingredientsControls() {
+    return (this.recipeForm.get('ingredients') as FormArray )['controls'];
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe(
@@ -89,4 +93,5 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {}
+
 }
