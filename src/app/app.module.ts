@@ -22,7 +22,7 @@ import { HeaderComponent } from './header/header.component';
 // custom service for shopping list
 // import { ShoppingListService } from './shopping-list/shopping-list.service';
 // import { RecipeService } from './recipes/recipe.service';
-import { AuthComponent } from './auth/auth.component';
+// import { AuthComponent } from './auth/auth.component';
 
 // load spinner componet 
 // import  { LoadingSpinngComponet } from './shared/loading-spinner/loading-spining.component';
@@ -47,33 +47,26 @@ import { SharedModule } from './shared/shared.module';
 // import coremodule for services
 import { CoreModule } from './core.module';
 
+// import Auth Module
+import { AuthModule } from './auth/auth.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AuthComponent
+    // AuthComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
     RecipesModule,
     ShoppingListModule,
+    AuthModule,
     SharedModule,
     CoreModule
   ],
-  // providers: [
-  //   ShoppingListService,
-  //   RecipeService, 
-  //   { 
-  //     provide: HTTP_INTERCEPTORS,
-  //     useClass: AuthInterceptorService,
-  //     multi: true 
-  //   }
-  // ],
   bootstrap: [AppComponent],
   
 })
