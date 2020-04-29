@@ -41,11 +41,14 @@ import { HeaderComponent } from './header/header.component';
 // import { RecipesModule  } from './recipes/recipes.module';
 
 // custom servies module
+import { LoggingService } from './logging.service';
 // import { ShoppingListModule } from './shopping-list/shopping-list.module';
+
 import { SharedModule } from './shared/shared.module';
 
 // import coremodule for services
 import { CoreModule } from './core.module';
+
 
 // import Auth Module
 // import { AuthModule } from './auth/auth.module';
@@ -68,6 +71,6 @@ import { CoreModule } from './core.module';
     CoreModule
   ],
   bootstrap: [AppComponent],
-  
+  providers: [LoggingService]
 })
 export class AppModule {}

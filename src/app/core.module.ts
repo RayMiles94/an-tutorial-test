@@ -9,6 +9,7 @@ import { RecipeService } from './recipes/recipe.service';
 
 // service interceptor
 import { AuthInterceptorService } from './auth/auth-intercepot.service';
+import { LoggingService } from './logging.service';
 
 @NgModule({
     providers: [
