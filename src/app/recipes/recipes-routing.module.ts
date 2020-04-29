@@ -15,7 +15,7 @@ import { RecipeResolverService } from './recipe-resolver.service';
 
 const routes: Routes = [
     { 
-        path: 'recipes', component: RecipesComponent, canActivate: [AuthGuard]
+        path: '', component: RecipesComponent, canActivate: [AuthGuard]
           ,children: [
             {  path: '', component: RecipeStartComponent  },
             {  path: 'new', component: RecipeEditComponent   },
@@ -26,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
 export class RecipesRoutingModule  {}

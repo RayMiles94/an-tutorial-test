@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 // import HTTP CLIENT 
@@ -38,7 +38,7 @@ import { HeaderComponent } from './header/header.component';
 // import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 // custom recipes module
-import { RecipesModule  } from './recipes/recipes.module';
+// import { RecipesModule  } from './recipes/recipes.module';
 
 // custom servies module
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
@@ -61,7 +61,7 @@ import { AuthModule } from './auth/auth.module';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    RecipesModule,
+    // RecipesModule,
     ShoppingListModule,
     AuthModule,
     SharedModule,
