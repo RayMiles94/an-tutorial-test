@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { AuthService } from './auth/auth.service';
 import { LoggingService } from './logging.service';
 
@@ -10,11 +11,14 @@ import { LoggingService } from './logging.service';
 export class AppComponent implements OnInit {
 
   constructor(private authservice: AuthService,
-              private loggingService: LoggingService) {}
+              private loggingService: LoggingService,
+              @Inject(PLATFORM_ID) private platformId ) {}
 
   ngOnInit(): void {
-   this.authservice.autoLogin();
-   this.loggingService.printLog("hello from App Comonent ngOnint");
+    if(isPlatformBrowser(this.platformId) ) {
+      this.authservice.autoLogin();
+    }
+    this.loggingService.printLog("hello from App Comonent ngOnint");
   }
 
 }

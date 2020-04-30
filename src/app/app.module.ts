@@ -61,7 +61,7 @@ import { CoreModule } from './core.module';
     // AuthComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     AppRoutingModule,
     // RecipesModule,
