@@ -12,7 +12,8 @@
     "dev:ssr": "ng run my-app:serve-ssr",
     "serve:ssr": "node dist/my-app/server/main.js",
     "build:ssr": "ng build --prod && ng run my-app:server:production",
-    "prerender": "ng run my-app:prerender"
+    "prerender": "ng run my-app:prerender",
+    "prebuild:ssr": "ngcc"
   },
   "private": true,
   "dependencies": {
@@ -25,9 +26,16 @@
     "@angular/platform-browser-dynamic": "~9.0.3",
     "@angular/platform-server": "~9.0.3",
     "@angular/router": "~9.0.3",
+    "@nestjs/common": "^6.0.0",
+    "@nestjs/core": "^6.0.0",
+    "@nestjs/ng-universal": "^3.1.0",
+    "@nestjs/platform-express": "^6.0.0",
     "@nguniversal/express-engine": "^9.0.2",
     "bootstrap": "^3.4.1",
+    "class-transformer": "^0.2.3",
+    "class-validator": "^0.9.1",
     "express": "^4.15.2",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
