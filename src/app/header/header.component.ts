@@ -4,6 +4,7 @@ import { AuthService } from '../auth/auth.service';
 import { Subscription } from 'rxjs';
 
 
+
 @Component({
  selector: 'app-header',
  templateUrl : './header.component.html',
@@ -15,7 +16,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     private userSUB: Subscription;
 
-    constructor(private datastorage: DataStrorageService, private authservice: AuthService) {}
+    constructor(private datastorage: DataStrorageService,
+                private authservice: AuthService) {}
     
 
     ngOnInit(): void {
