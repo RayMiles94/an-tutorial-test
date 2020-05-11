@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  firebaseAPI: 'AIzaSyDmS1QIGQIVo2TkwZTyO9FWQuSbLmGbbDw'
+  firebaseAPI: 'secret'
 };
 
 /*
