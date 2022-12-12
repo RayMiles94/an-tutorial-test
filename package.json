@@ -34,7 +34,7 @@
     "bootstrap": "^3.4.1",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.9.1",
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
